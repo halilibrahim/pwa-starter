@@ -1,6 +1,10 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
+import OpenReplay from '@openreplay/tracker';
+import trackerAssist from '@openreplay/tracker-assist';
+
+
 
 import './pages/app-home';
 import './components/header';
@@ -52,6 +56,14 @@ export class AppIndex extends LitElement {
 
   constructor() {
     super();
+    const tracker = new OpenReplay({
+      projectKey: "FeU0M98wRKfaiZ2fSTFl",
+      ingestPoint: "https://openreplay.kaitek.com.tr/ingest",
+      respectDoNotTrack: false,
+      __DISABLE_SECURE_MODE: true,
+    });
+    tracker.use(trackerAssist({}));
+    tracker.start();
   }
 
   firstUpdated() {

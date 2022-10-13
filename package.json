@@ -15,6 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@openreplay/tracker": "^4.1.5",
+    "@openreplay/tracker-assist": "^4.1.1",
     "@pwabuilder/pwainstall": "^1.6.7",
     "@shoelace-style/shoelace": "^2.0.0-beta.82",
     "@vaadin/router": "^1.7.4",
